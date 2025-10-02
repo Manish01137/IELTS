@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IELTS Academy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="logo11.jpeg" alt="EpicInk Enterprises Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#coaching">Coaching</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#enroll" class="btn btn-primary">Enroll Now</a>
+  </header>
+  
+
+  <!-- Hero Section -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <!-- LEFT: text -->
+      <div class="hero-text">
+        <p class="eyebrow">Achieve Your Dream Band</p>
+  
+        <h1 id="hero-title">
+          Your <span class="highlight">dream abroad</span><br>
+          begins with the right band score —<br>
+          <span class="accent">Start your IELTS training today</span>
+        </h1>
+  
+        <p class="lead">
+          Dreaming of studying, working, or settling abroad? 
+          At EpicInk Enterprises we provide expert-led training, personalized guidance, 
+          and proven strategies to help you achieve your target band.
+        </p>
+  
+        <div class="hero-buttons">
+          <a href="#get-started" class="btn btn-primary">Get Started</a>
+          <a href="#contact" class="btn btn-outline">Contact Us</a>
+        </div>
+      </div>
+  
+      <!-- RIGHT: image/media -->
+      <div class="hero-media">
+        <div class="media-frame">
+          <img src="student1.jpg" alt="Students studying together" class="hero-image">
+          <div class="badge">
+            <span class="tick">✔</span>
+            <div class="badge-text">
+              <strong>Band 8.5 Achieved</strong>
+              <small>Join our success stories</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- Optional: small script to add .visible when element enters viewport for reveal animation -->
+  <script>
+    (function () {
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) e.target.classList.add('visible');
+          });
+        }, {threshold: 0.12});
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+      } else {
+        // fallback: show all
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+      }
+    })();
+  </script>
+  
+
+  <!-- Coaching Plans -->
+ <!-- Coaching Plans -->
+<section id="coaching" class="plans">
+    <div class="plans-inner">
+      <header class="plans-header">
+        <p class="eyebrow">Your Pathway to Success</p>
+        <h2>Choose Your Perfect <span class="highlight">Coaching Plan</span></h2>
+        <p class="plans-sub">Flexible learning paths designed to match your goals, timeline, and learning style.</p>
+      </header>
+  
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="marker">1</div>
+          <article class="plan-card">
+            <div class="plan-icon">📘</div>
+            <h3>Option A: Foundation Course</h3>
+            <p>Perfect for beginners — build grammar, vocabulary and IELTS fundamentals with weekly mock tests.</p>
+          </article>
+        </div>
+  
+        <div class="timeline-item reveal">
+          <div class="marker">2</div>
+          <article class="plan-card">
+            <div class="plan-icon">👥</div>
+            <h3>Option B: Group Coaching</h3>
+            <p>Interactive group sessions, peer practice and guided lessons across all four IELTS modules.</p>
+          </article>
+        </div>
+  
+        <div class="timeline-item reveal">
+          <div class="marker">3</div>
+          <article class="plan-card">
+            <div class="plan-icon">🧑‍🏫</div>
+            <h3>Option C: One-on-One Training</h3>
+            <p>Personalized coaching focused on your weaknesses, fast-tracking improvement with targeted feedback.</p>
+          </article>
+        </div>
+  
+        <div class="timeline-item reveal">
+          <div class="marker">4</div>
+          <article class="plan-card">
+            <div class="plan-icon">🚀</div>
+            <h3>Option D: Intensive Boot Camp</h3>
+            <p>Accelerated 4-week program for urgent test dates — daily practice + simulated tests.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    (function(){
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+          });
+        }, { threshold: 0.12 });
+  
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      } else {
+        // fallback: show all
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+      }
+    })();
+  </script>
+  
+  <!-- About -->
+  <section id="about" class="about" aria-labelledby="about-heading">
+    <div class="about-inner">
+      <!-- Text -->
+      <div class="about-text reveal">
+        <p class="eyebrow">About Us</p>
+        <h2 id="about-heading">Why Choose <span class="highlight">IELTS Academy?</span></h2>
+  
+        <p class="about-lead">
+          We are a premier IELTS coaching center dedicated to helping students achieve their dream band scores. With
+          a track record of 500+ successful students and an average band score of 8.5, we combine proven methodologies
+          with personalized attention.
+        </p>
+  
+        <ul class="about-features" role="list">
+          <li class="feature">
+            <svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>
+            <div>
+              <strong>Expert trainers</strong>
+              <div class="muted">10+ years of experience</div>
+            </div>
+          </li>
+  
+          <li class="feature">
+            <svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>
+            <div>
+              <strong>Proven strategies</strong>
+              <div class="muted">Techniques to score Band 8+</div>
+            </div>
+          </li>
+  
+          <li class="feature">
+            <svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>
+            <div>
+              <strong>Personalized feedback</strong>
+              <div class="muted">Detailed progress tracking</div>
+            </div>
+          </li>
+  
+          <li class="feature">
+            <svg class="check" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20 6L9 17l-5-5"/></svg>
+            <div>
+              <strong>Flexible schedules</strong>
+              <div class="muted">Works for students & professionals</div>
+            </div>
+          </li>
+        </ul>
+  
+        <div class="about-cta">
+          <a class="btn btn-primary" href="#courses">View Courses</a>
+          <a class="btn btn-outline" href="#contact">Book a Free Trial</a>
+        </div>
+      </div>
+  
+      <!-- Image -->
+      <div class="about-media reveal" aria-hidden="true">
+        <div class="media-frame">
+          <img src="girlstudnt.jpg" alt="Instructor smiling" class="about-image">
+          <div class="years-badge" aria-hidden="true">
+            <strong>10+</strong>
+            <span>Years Teaching</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+        return;
+      }
+      const items = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // stagger children reveals inside the block
+            const parent = entry.target;
+            const children = parent.querySelectorAll('.feature, .plan-card, .about-features > li');
+            // reveal parent immediately
+            parent.classList.add('visible');
+            // stagger features (if any)
+            if (children.length) {
+              children.forEach((c, i) => {
+                c.style.transitionDelay = (i * 80) + 'ms';
+                c.classList.add('visible');
+              });
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+  
+      items.forEach(el => observer.observe(el));
+    })();
+  </script>
+  
+
+  <!-- Courses -->
+ <!-- Courses -->
+ 
+  
+
+  
+  
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Our <span class="highlight">Students Say</span></h2>
+    <div class="testimonial-grid">
+      <div class="testimonial">"Best coaching ever!" - Priya Sharma</div>
+      <div class="testimonial">"Helped me score Band 8!" - Rahul Mehta</div>
+      <div class="testimonial">"Confidence booster!" - Anjali Patel</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 IELTS Academy. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
