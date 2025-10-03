@@ -2011,3 +2011,259 @@
   .navbar .logo img { height: 34px; }
   .navbar .btn-primary { padding: 8px 12px; font-size: .95rem; }
 }
+
+
+/* ---------- Hero: balanced layout for very wide desktop windows ---------- */
+/* container basics (keeps mobile & mac looking as before) */
+.hero {
+    padding: 56px 0;
+    background: linear-gradient(180deg,#fbfbff,#fff0f5); /* keep theme */
+    color: #0f172a;
+  }
+  
+  .hero .container {
+    width: 100%;
+    max-width: 1200px;            /* constrain the overall width (prevents excessive stretching) */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* default two-column */
+    gap: clamp(20px, 4vw, 48px);    /* smaller gap on narrow, larger on medium, capped on very wide */
+    align-items: center;
+    align-content: center;
+    padding: 0 20px;
+  }
+  
+  /* Text column */
+  .hero-text {
+    /* keep comfortable reading width */
+    max-width: 720px;
+    padding-right: 6px;
+  }
+  .hero .eyebrow {
+    display:inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(99,102,241,0.08);
+    color: #6366f1;
+    font-weight:700;
+    margin-bottom:14px;
+  }
+  
+  /* Responsive, scalable heading */
+  .hero h1 {
+    margin: 8px 0 18px;
+    line-height: 1.06;
+    font-weight: 800;
+    /* scales between 28px and 56px depending on viewport */
+    font-size: clamp(28px, 4.5vw, 56px);
+  }
+  .hero .highlight { 
+    background: linear-gradient(90deg,#4753ff,#b92fe8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero .accent {
+    display:inline-block;
+    background: linear-gradient(90deg,#6d28d9,#ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* lead paragraph */
+  .hero .lead {
+    color: #475569;
+    font-size: clamp(15px, 1.6vw, 18px);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 64ch;
+  }
+  
+  /* Buttons */
+  .hero .hero-buttons { display:flex; gap:14px; flex-wrap:wrap; }
+  .btn { text-decoration:none; border-radius:999px; padding:12px 20px; font-weight:700; }
+  .btn-primary { background: linear-gradient(90deg,#4f46e5,#ec4899); color:#fff; }
+  .btn-outline { border: 2px solid rgba(79,70,229,0.12); color:#4f46e5; background:transparent; }
+  
+  /* MEDIA: image frame (limit maximum size, center & style) */
+  .hero-media { display:flex; justify-content:center; align-items:center; }
+  .media-frame {
+    width: 100%;
+    max-width: 520px;            /* prevents the image from expanding too large on wide desktops */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 28px 60px rgba(17,24,39,0.06);
+    position: relative;
+    background: #fff;
+  }
+  .hero-image {
+    display:block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    transform-origin: center;
+  }
+  
+  /* badge inside media */
+  .badge {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    background: #fff;
+    padding: 12px 14px;
+    border-radius: 12px;
+    display:flex;
+    gap:10px;
+    align-items:center;
+    box-shadow: 0 12px 30px rgba(17,24,39,0.08);
+  }
+  .badge .tick { color:#16a34a; font-weight:800; }
+  .badge .badge-text strong { font-weight:800; color:#0f172a; }
+  .badge small { color:#6b7280; display:block; }
+  
+  /* ---------- Desktop wide-screen refinements ---------- */
+  /* For very wide screens (big desktop windows) make the text column slightly wider so spacing feels balanced */
+  @media (min-width: 1200px) {
+    .hero .container {
+      grid-template-columns: 55% 45%;   /* give text a little more room than image on wide monitors */
+      max-width: 1400px;               /* allow a touch more width, but still constrained */
+      gap: 48px;
+    }
+  
+    /* tighten media-frame max width a bit on very large displays */
+    .media-frame { max-width: 560px; }
+  }
+  
+  /* On ultra-wide monitors, avoid text line-length growing too large */
+  @media (min-width: 1600px) {
+    .hero .container { max-width: 1500px; }
+    .hero-text { max-width: 800px; }
+  }
+  
+  /* ---------- Tablet & Mobile (keeps your existing stacked look) ---------- */
+  @media (max-width: 900px) {
+    .hero .container {
+      grid-template-columns: 1fr;
+      gap: 22px;
+      padding: 0 18px;
+    }
+    .hero-text { order: 1; text-align: left; }
+    .hero-media { order: 2; justify-content:center; }
+    .media-frame { max-width: 94%; min-height: 260px; }
+    .hero h1 { text-align: left; }
+  }
+  
+  /* Mobile small tweaks to keep heading centered if you prefer */
+  @media (max-width: 420px) {
+    .hero h1 { font-size: clamp(22px,6.5vw,34px); line-height:1.06; }
+    .hero .lead { font-size: 15px; max-width: 44ch; }
+    .media-frame { min-height: 240px; border-radius: 12px; }
+  }
+  
+  /* Accessibility: reduce motion */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-image, .media-frame, .badge { transition: none !important; transform: none !important; }
+  }
+  
+
+
+  /* ---------- Responsive badge tweaks (drop this after existing badge styles) ---------- */
+
+/* base: keep your existing desktop look but tighten a few values for consistency */
+.badge {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    background: #fff;
+    padding: 12px 14px;
+    border-radius: 12px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0 12px 30px rgba(17,24,39,0.08);
+    font-family: inherit;
+    transition: transform .18s ease, opacity .18s ease;
+    z-index: 5;
+  }
+  
+  /* tick circle */
+  .badge .tick {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    background: rgba(16,185,129,0.12);
+    color: #16a34a;
+    font-weight: 800;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  
+  /* badge text */
+  .badge .badge-text { display: flex; flex-direction: column; gap: 2px; }
+  .badge .badge-text strong { font-size: 0.98rem; line-height: 1; color: #0f172a; }
+  .badge .badge-text small { font-size: 0.78rem; color: var(--muted, #6b7280); }
+  
+  /* ===== Mobile / small screens ===== */
+  @media (max-width: 900px) {
+    /* center the badge and make it pill-shaped so it sits nicely over image */
+    .badge {
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 12px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      gap: 8px;
+      background: rgba(255,255,255,0.96);
+      box-shadow: 0 10px 28px rgba(17,24,39,0.06);
+    }
+  
+    .badge .tick {
+      width: 32px;
+      height: 32px;
+      font-size: 16px;
+    }
+  
+    .badge .badge-text {
+      align-items: center;
+      text-align: center;
+    }
+    .badge .badge-text strong { font-size: 0.95rem; }
+    .badge .badge-text small { font-size: 0.7rem; color: var(--muted, #6b7280); }
+  }
+  
+  /* very small phones: simplify to keep it compact */
+  @media (max-width: 420px) {
+    .badge {
+      bottom: 10px;
+      padding: 8px 10px;
+    }
+    .badge .tick { width: 28px; height: 28px; font-size: 14px; }
+    .badge .badge-text strong { font-size: 0.9rem; }
+  
+    /* hide the subtitle on very small screens to avoid wrapping */
+    .badge .badge-text small { display: none; }
+  }
+  
+  /* Optional: if you want the badge *below* the image on mobile instead of overlaying,
+     uncomment the block below and comment out the transform/left rules above. */
+  /*
+  @media (max-width: 900px) {
+    .media-frame { display: flex; flex-direction: column; align-items: center; }
+    .badge {
+      position: static;
+      transform: none;
+      margin-top: 12px;
+      left: auto;
+      bottom: auto;
+    }
+  }
+  */
+  
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .badge { transition: none !important; }
+  }
+  
