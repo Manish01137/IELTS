@@ -12,14 +12,32 @@
     <div class="logo">
       <img src="logo11.jpeg" alt="EpicInk Enterprises Logo">
     </div>
-    <nav>
+  
+    <!-- mobile menu toggle (checkbox) -->
+    <input id="nav-toggle" type="checkbox" class="nav-toggle" aria-hidden="true">
+  
+    <nav class="nav-desktop">
       <ul>
         <li><a href="#about">About Us</a></li>
         <li><a href="#coaching">Coaching</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+  
+    <label for="nav-toggle" class="hamburger" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+  
     <a href="#enroll" class="btn btn-primary">Enroll Now</a>
+  
+    <!-- mobile menu overlay (same links for accessibility) -->
+    <div class="mobile-menu" aria-hidden="true">
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#coaching">Coaching</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </header>
   
 
@@ -258,18 +276,173 @@
   
 
   <!-- Testimonials -->
-  <section class="testimonials">
-    <h2>What Our <span class="highlight">Students Say</span></h2>
-    <div class="testimonial-grid">
-      <div class="testimonial">"Best coaching ever!" - Priya Sharma</div>
-      <div class="testimonial">"Helped me score Band 8!" - Rahul Mehta</div>
-      <div class="testimonial">"Confidence booster!" - Anjali Patel</div>
+  <section class="testimonials" aria-labelledby="testimonials-heading">
+    <div class="container testimonials-inner">
+      <!-- LEFT: heading & intro -->
+      <div class="testimonials-head">
+        <p class="eyebrow">Success Stories</p>
+        <h2 id="testimonials-heading">What Our <span class="highlight">Students Say</span></h2>
+        <p class="muted sub">Join the many students who achieved their dream band with our focused coaching and practice.</p>
+      </div>
+  
+      <!-- RIGHT: testimonial cards -->
+      <div class="testimonial-grid" role="list">
+        <article class="testimonial-card" role="listitem" tabindex="0">
+          <div class="quote">“The personalized coaching helped me achieve my target band score in just 6 weeks! The instructors were incredibly supportive and their strategies really work.”</div>
+          <div class="testimonial-meta">
+            <img class="avatar" src="girl1.jpg" alt="Priya Sharma">
+            <div class="meta-text">
+              <strong class="name">Priya Sharma</strong>
+              <span class="muted">Moving to Canada</span>
+            </div>
+            <span class="band-badge">8.5</span>
+          </div>
+        </article>
+  
+        <article class="testimonial-card" role="listitem" tabindex="0">
+          <div class="quote">“Best IELTS coaching in the city! The mock tests and detailed feedback on my writing were game-changers. Highly recommend.”</div>
+          <div class="testimonial-meta">
+            <img class="avatar" src="boy1.jpg" alt="Rahul Mehta">
+            <div class="meta-text">
+              <strong class="name">Rahul Mehta</strong>
+              <span class="muted">Moving to Australia</span>
+            </div>
+            <span class="band-badge">8.0</span>
+          </div>
+        </article>
+  
+        <article class="testimonial-card" role="listitem" tabindex="0">
+          <div class="quote">“The speaking practice sessions boosted my confidence tremendously. The flexible timings worked perfectly with my job. Got my desired band on the first attempt!”</div>
+          <div class="testimonial-meta">
+            <img class="avatar" src="girl2.jpg" alt="Anjali Patel">
+            <div class="meta-text">
+              <strong class="name">Anjali Patel</strong>
+              <span class="muted">Moving to UK</span>
+            </div>
+            <span class="band-badge">7.5</span>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
+  
+  
+  
 
   <!-- Footer -->
-  <footer>
-    <p>© 2025 IELTS Academy. All Rights Reserved.</p>
+<!-- FOOTER: attractive, theme-based, payment logos included -->
+<footer class="site-footer" role="contentinfo" id="footer">
+    <div class="footer-inner">
+      <!-- Brand / about -->
+      <div class="footer-brand">
+        <img src="logo11.jpeg" alt="EpicInk Enterprises logo" class="footer-logo">
+        <p class="brand-desc">
+          We are a premier IELTS coaching center dedicated to helping students achieve their dream band
+          scores. 500+ successful students • Avg band 8.5 • Personalized coaching & mock tests.
+        </p>
+      </div>
+  
+      <!-- Column: Coaching -->
+      <nav class="footer-col" aria-labelledby="f-coaching">
+        <h4 id="f-coaching">Coaching</h4>
+        <ul>
+          <li><a href="#ielts">IELTS</a></li>
+          <li><a href="#pte">PTE</a></li>
+          <li><a href="#toefl">TOEFL</a></li>
+          <li><a href="#spoken">Spoken English</a></li>
+          <li><a href="#advanced">Advanced English</a></li>
+        </ul>
+      </nav>
+  
+      <!-- Column: For Students -->
+      <nav class="footer-col" aria-labelledby="f-students">
+        <h4 id="f-students">For Students</h4>
+        <ul>
+          <li><a href="#login">Login</a></li>
+          <li><a href="#register">Registration</a></li>
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+  
+      <!-- Column: Payments + Socials -->
+      <div class="footer-col footer-pay" aria-labelledby="f-pay">
+        <h4 id="f-pay">Online Payment</h4>
+  
+        <!-- Payment logos row (SVG / brand-styled badges using site theme) -->
+        <div class="payments">
+          <a href="#pay-phonepe" class="pay-badge" aria-label="PhonePe">
+            <!-- stylized PhonePe-like badge -->
+            <svg viewBox="0 0 120 48" aria-hidden="true" class="pay-svg">
+              <rect rx="12" width="120" height="48" fill="url(#g1)"/>
+              <text x="60" y="31" text-anchor="middle" font-weight="800" font-family="Segoe UI, Roboto, Arial" font-size="16" fill="#fff">PhonePe</text>
+              <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#5b21b6"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs>
+            </svg>
+          </a>
+  
+          <a href="#pay-paytm" class="pay-badge" aria-label="Paytm">
+            <svg viewBox="0 0 120 48" aria-hidden="true" class="pay-svg">
+              <rect rx="12" width="120" height="48" fill="url(#g2)"/>
+              <text x="60" y="31" text-anchor="middle" font-weight="800" font-family="Segoe UI, Roboto, Arial" font-size="16" fill="#fff">Paytm</text>
+              <defs><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#0ea5a9"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+            </svg>
+          </a>
+  
+          <a href="#pay-gpay" class="pay-badge" aria-label="Google Pay">
+            <svg viewBox="0 0 120 48" aria-hidden="true" class="pay-svg">
+              <rect rx="12" width="120" height="48" fill="url(#g3)"/>
+              <text x="60" y="31" text-anchor="middle" font-weight="800" font-family="Segoe UI, Roboto, Arial" font-size="16" fill="#fff">G-Pay</text>
+              <defs><linearGradient id="g3" x1="0" x2="1"><stop offset="0" stop-color="#4f46e5"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs>
+            </svg>
+          </a>
+  
+          <a href="#pay-card" class="pay-badge" aria-label="Cards">
+            <svg viewBox="0 0 120 48" aria-hidden="true" class="pay-svg">
+              <rect rx="12" width="120" height="48" fill="url(#g4)"/>
+              <text x="60" y="31" text-anchor="middle" font-weight="800" font-family="Segoe UI, Roboto, Arial" font-size="16" fill="#fff">Cards</text>
+              <defs><linearGradient id="g4" x1="0" x2="1"><stop offset="0" stop-color="#0ea5a9"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs>
+            </svg>
+          </a>
+        </div>
+  
+        <!-- Call-to-action Pay button -->
+        <a href="#pay" class="btn-pay" role="button">Pay Now</a>
+  
+        <!-- Social icons (theme-styled squares) -->
+        <div class="socials" aria-label="Social links">
+          <a href="#" class="social" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h3v4h-3v2h3v8h-3v-8h-2v-2h2V6a2 2 0 0 1 2-3z"/></svg>
+          </a>
+          <a href="#" class="social" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"/></svg>
+          </a>
+          <a href="#" class="social" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9H3V21h3V9zM4.5 7a1.75 1.75 0 1 0 0-3.5A1.75 1.75 0 0 0 4.5 7zM21 21h-3v-6c0-1.6-1.4-3-3-3s-3 1.4-3 3v6h-3V9h3v1.5c.9-1.2 2.7-2 4.5-2 3.3 0 6 2.7 6 6V21z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <!-- bottom row -->
+    <div class="footer-bottom">
+      <a href="#top" class="back-to-top" aria-label="Back to top">▲</a>
+      <p class="copyright">© 2025 EpicInk Enterprises Academy. All Rights Reserved.</p>
+    </div>
+  
+    <!-- floating contact buttons (right side) -->
+    <div class="footer-floating" aria-hidden="true">
+      <a href="https://wa.me/your-number" class="float-btn" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.2 6.8A6.4 6.4 0 1 0 8.2 15.8L3 21l4.8-1.4A6.4 6.4 0 0 0 17.2 6.8z"/></svg>
+      </a>
+      <a href="mailto:info@example.com" class="float-btn" aria-label="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3zM4 7v10h16V7l-8 5L4 7z"/></svg>
+      </a>
+      <a href="#contact" class="float-btn" aria-label="Contact">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zM11 6h2v7h-2zM11 15h2v2h-2z"/></svg>
+      </a>
+    </div>
   </footer>
+  
+  
 </body>
 </html>
